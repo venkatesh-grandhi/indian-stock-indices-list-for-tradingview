@@ -62,7 +62,7 @@ puppeteer.use(StealthPlugin());
 
 
 	
-	const scriptPath = path.resolve(__dirname, '../../ScripConverter.sh');
+	const scriptPath = path.resolve(__dirname, '../ScripConverter.sh');
 
 	exec(`sh "${scriptPath}"`, (error: Error | null, stdout: string, stderr: string) => {
 		if (error) {
