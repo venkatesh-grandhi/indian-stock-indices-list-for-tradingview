@@ -4,6 +4,7 @@ set +x
 PWD="$(dirname "$0")"
 DIRECTORY="$PWD/../DownloadedIndices"
 NEW_DIRECTORY="$PWD/../ConvertedIndices"
+mkdir -p "$NEW_DIRECTORY"
 
 for FILE_PATH in "$DIRECTORY"/*; do
     FILE_NAME=$(basename "$FILE_PATH")

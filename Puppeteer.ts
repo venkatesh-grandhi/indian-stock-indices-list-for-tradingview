@@ -53,7 +53,11 @@ puppeteer.use(StealthPlugin());
 			.catch(error => `Fetch failed: ${error}`);
 		}, csvUrl);
 		
-		const downloadPath = path.resolve(__dirname, `../../DownloadedIndices/${fileName}.csv`);
+		const downloadDir = path.resolve(__dirname, '../../DownloadedIndices');
+		if (!fs.existsSync(downloadDir)) {
+			fs.mkdirSync(downloadDir, { recursive: true });
+		}
+		const downloadPath = path.join(downloadDir, `${fileName}.csv`);
 		fs.writeFileSync(downloadPath, csvData);
 		console.log('CSV file downloaded successfully.');
 	}
