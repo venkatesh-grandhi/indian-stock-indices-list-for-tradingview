@@ -1,20 +1,26 @@
 {
-  "name": "sm",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "@types/node": "^22.13.5",
-    "puppeteer": "^24.2.1",
-    "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-stealth": "^2.11.2",
-    "typescript": "^5.7.3"
-  }
+	"name": "indian-stock-indices-list-for-tradingview",
+	"version": "1.0.0",
+	"description": "A project to download and convert Indian stock indices for TradingView",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"start": "npm run build && node dist/Puppeteer.js",
+		"download": "node dist/Puppeteer.js",
+		"clean": "rm -rf dist output",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"dependencies": {
+		"puppeteer": "^24.2.1",
+		"puppeteer-extra": "^3.3.6",
+		"puppeteer-extra-plugin-stealth": "^2.11.2"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.5",
+		"typescript": "^5.7.3"
+	}
 }

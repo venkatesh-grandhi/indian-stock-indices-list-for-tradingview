@@ -53,7 +53,7 @@ puppeteer.use(StealthPlugin());
 			.catch(error => `Fetch failed: ${error}`);
 		}, csvUrl);
 		
-		const downloadDir = path.resolve(__dirname, '../../DownloadedIndices');
+		const downloadDir = path.resolve(__dirname, '../output/downloaded');
 		if (!fs.existsSync(downloadDir)) {
 			fs.mkdirSync(downloadDir, { recursive: true });
 		}
@@ -66,7 +66,7 @@ puppeteer.use(StealthPlugin());
 
 
 	
-	const scriptPath = path.resolve(__dirname, '../ScripConverter.sh');
+	const scriptPath = path.resolve(__dirname, '../scripts/ScripConverter.sh');
 
 	exec(`sh "${scriptPath}"`, (error: Error | null, stdout: string, stderr: string) => {
 		if (error) {
