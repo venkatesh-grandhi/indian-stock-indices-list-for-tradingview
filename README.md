@@ -6,15 +6,16 @@ This project scrapes Indian stock indices from NSE India and converts them to Tr
 
 ```
 indian-stock-indices-list-for-tradingview/
-├── src/                    # TypeScript source files
-│   └── Puppeteer.ts       # Main scraper script
-├── scripts/                # Shell scripts
-│   └── ScripConverter.sh  # CSV to TradingView converter
-├── output/                 # Generated output (gitignored)
-│   ├── downloaded/        # Raw CSV files from NSE India
-│   └── converted/         # TradingView-ready format files
-├── dist/                   # Compiled JavaScript (gitignored)
-└── node_modules/          # Dependencies (gitignored)
+├── src/                         # TypeScript source files
+│   ├── index.ts                # Main scraper script
+│   └── config.ts               # Configuration (URLs, timeouts, paths)
+├── scripts/                     # Shell scripts
+│   └── convertToTradingView.sh # CSV to TradingView converter
+├── output/                      # Generated output (gitignored)
+│   ├── raw/                    # Raw CSV files from NSE India
+│   └── tradingview/            # TradingView-ready format files
+├── dist/                        # Compiled JavaScript (gitignored)
+└── node_modules/               # Dependencies (gitignored)
 ```
 
 ## Installation
@@ -30,6 +31,11 @@ npm install
 npm start
 ```
 This will compile the TypeScript code and run the scraper in one command.
+
+### Headless Mode (for CI/CD)
+```bash
+HEADLESS=true npm start
+```
 
 ### Individual Steps
 
@@ -51,8 +57,8 @@ Removes both `dist/` and `output/` directories.
 
 ## Output
 
-- **Downloaded CSVs**: `output/downloaded/*.csv` - Raw data from NSE India
-- **Converted TXT**: `output/converted/*.csv.txt` - TradingView format (comma-separated symbols with NSE: prefix)
+- **Raw CSVs**: `output/raw/*.csv` - Raw data from NSE India
+- **TradingView TXT**: `output/tradingview/*.csv.txt` - TradingView format (comma-separated symbols with `NSE:` prefix)
 
 ## Indices Covered
 
