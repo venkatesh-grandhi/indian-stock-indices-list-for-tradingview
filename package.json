@@ -2,11 +2,11 @@
 	"name": "indian-stock-indices-list-for-tradingview",
 	"version": "1.0.0",
 	"description": "A project to download and convert Indian stock indices for TradingView",
-	"main": "index.js",
+	"main": "dist/index.js",
 	"scripts": {
 		"build": "tsc",
-		"start": "npm run build && node dist/Puppeteer.js",
-		"download": "node dist/Puppeteer.js",
+		"start": "npm run build && node dist/index.js",
+		"download": "node dist/index.js",
 		"clean": "rm -rf dist output",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
